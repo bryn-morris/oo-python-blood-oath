@@ -48,3 +48,10 @@ class Cult:
     def find_by_founding_year(cls, founding_year_int):
 
         return [c for c in cls.all if c.fy == founding_year_int]
+    
+    @property
+    def average_age(self):
+
+        follower_age_list = [f.age for f in self.followers]
+        
+        return(float(sum(follower_age_list)/self.cult_population))
