@@ -26,6 +26,11 @@ b1 = BloodOath( "1999-10-31",c1,f2 )
 b2 = BloodOath( "2004-04-27",c1,f3 )
 b3 = BloodOath( "1887-05-30",c2,f1 )
 b4 = BloodOath( "1887-05-30",c2,f3 )
+b5 = BloodOath( "1890-05-30",c3,f1 )
+b6 = BloodOath( "1888-05-30",c4,f1 )
+b7 = BloodOath( "1888-05-30",c4,f3 )
+b8 = BloodOath( "1888-05-30",c4,f2 )
+b9 = BloodOath( "1889-05-30",c3,f3 )
 
 
 print( "Mwahahaha!" )

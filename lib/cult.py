@@ -5,6 +5,7 @@ from .bloodoath import BloodOath
 class Cult:
 
     all = []
+    cult_num={}
 
     def __init__(self, name, city, founding_year, slogan):
         self.name = name
@@ -12,6 +13,14 @@ class Cult:
         self.fy = founding_year
         self.slogan = slogan
         Cult.all.append(self)
+
+        if city in Cult.cult_num.keys():
+            Cult.cult_num[city] += 1
+                        
+        else:
+            Cult.cult_num[city] = 1
+            
+            
     
     @property
     def oaths(self):
@@ -55,3 +64,29 @@ class Cult:
         follower_age_list = [f.age for f in self.followers]
         
         return(float(sum(follower_age_list)/self.cult_population))
+    
+    @property
+    def my_followers_mottos(self):
+
+        for f in self.followers:
+            print(f.life_motto)
+
+    @classmethod
+    def least_popular(cls):
+        
+        # list_of_dict = [{c:c.cult_population} for c in cls.all]
+
+        # sorted(list_of_dict, lambda x: x.c)
+
+        # for dict in list_of_dict:
+        #     if ___ == list_of_dict[][0]
+
+        for c in cls.all:
+            if c.cult_population == min([c.cult_population for c in cls.all]):
+                return c.name
+    
+    @classmethod
+    def most_common_location(cls):
+
+        return cls.cult_num
+       
